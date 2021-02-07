@@ -34,14 +34,8 @@ public class LocationService {
         return locationRepository.findById(id);
     }
     
-    public Location create(@RequestBody Location location) throws LocationNotFoundException {
-      Location saved = null;
-        try {
-          saved =  locationRepository.save(location);
-      } catch (Exception e) {
-          e.getMessage();
-      }
-        return saved;
+    public Location create( Location location) {
+      return  locationRepository.save(location);
     }
     
     public void deleteById( Long id) {

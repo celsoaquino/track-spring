@@ -40,7 +40,7 @@ public class LocationController {
 
     @PostMapping
     @ResponseBody
-    public Location create(@RequestBody Location location) throws InterruptedException, LocationNotFoundException {
+    public Location create(@RequestBody Location location)  {
         location.setDateTime(LocalDateTime.now());
         log.info("testAsync Start");
         service.updateTrack(location);
