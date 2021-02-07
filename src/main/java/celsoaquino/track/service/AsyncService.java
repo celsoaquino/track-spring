@@ -18,7 +18,7 @@ public class AsyncService {
 
     @Transactional
     @Async("asyncExecutor")
-    public void updateTrack(Location location) throws InterruptedException, LocationNotFoundException {
+    public void updateTrack(Location location) {
         log.info("Initial async");
         try {
             Long id = location.getTrackerId();
