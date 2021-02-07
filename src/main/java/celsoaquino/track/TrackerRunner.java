@@ -16,7 +16,7 @@ public class TrackerRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
       Tracker tracker = new Tracker();
       tracker.setId(654321L);
-      tracker.setName("Celso Aquino");
+      tracker.setName("Meu rastreador");
       tracker.setLatitude(-23.9626767);
       tracker.setLongitude(-46.3884785);
       service.save(tracker);

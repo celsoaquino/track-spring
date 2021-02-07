@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 
 @Data
@@ -21,9 +23,14 @@ public class Location {
     private Long id;
 
 
-    private LocalDateTime dateTime;
+    private ZonedDateTime dateTime;
     private Double latitude;
     private Double longitude;
     private Long trackerId;
 
+    public void setDateTime(LocalDateTime dateTime) {
+        ZonedDateTime br = dateTime.atZone(ZoneId.of("Brazil/east"));
+
+        this.dateTime = br;
+    }
 }
