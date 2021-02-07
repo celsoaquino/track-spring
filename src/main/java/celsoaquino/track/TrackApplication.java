@@ -10,7 +10,6 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import java.util.concurrent.Executor;
 
 @SpringBootApplication
-@EnableCaching
 public class TrackApplication {
     public static void main(String[] args) {
         SpringApplication.run(TrackApplication.class, args);

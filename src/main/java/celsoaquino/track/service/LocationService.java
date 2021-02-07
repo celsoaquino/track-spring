@@ -2,20 +2,14 @@ package celsoaquino.track.service;
 
 import celsoaquino.track.Exception.LocationNotFoundException;
 import celsoaquino.track.dto.mapper.LocationMapper;
-import celsoaquino.track.dto.mapper.TrackerMapper;
 import celsoaquino.track.dto.request.LocationDTO;
 import celsoaquino.track.entity.Location;
-import celsoaquino.track.entity.Tracker;
 import celsoaquino.track.repository.LocationRepository;
-import celsoaquino.track.repository.TrackerRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

@@ -1,8 +1,6 @@
 package celsoaquino.track.dto.request;
 
-import celsoaquino.track.entity.Tracker;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
