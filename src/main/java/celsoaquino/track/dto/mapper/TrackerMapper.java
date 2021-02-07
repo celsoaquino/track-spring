@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 
-@Mapper(uses = {LocationMapper.class})
+@Mapper(uses = {LocationMapper.class}, componentModel = "spring")
 public interface TrackerMapper {
 
     TrackerMapper INSTANCE = Mappers.getMapper(TrackerMapper.class);
