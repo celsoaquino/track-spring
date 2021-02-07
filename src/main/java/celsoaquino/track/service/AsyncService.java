@@ -20,17 +20,14 @@ public class AsyncService {
     @Async("asyncExecutor")
     public void updateTrack(Location location) throws InterruptedException, LocationNotFoundException {
         log.info("Initial async");
-        Thread.sleep(6000);
-
         try {
             Long id = location.getTrackerId();
             TrackerDTO tracker = trackerService.findById(id);
             tracker.setLatitude(location.getLatitude());
             tracker.setLongitude(location.getLongitude());
             trackerService.save(tracker);
-
         } catch (Exception e) {
-          e.getMessage();
+          log.warn("---------->>>" +e.getMessage());
         }
     }
 }
