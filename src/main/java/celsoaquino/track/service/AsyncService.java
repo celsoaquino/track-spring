@@ -1,10 +1,7 @@
 package celsoaquino.track.service;
 
-import celsoaquino.track.Exception.LocationNotFoundException;
 import celsoaquino.track.dto.request.TrackerDTO;
 import celsoaquino.track.entity.Location;
-import celsoaquino.track.entity.Tracker;
-import celsoaquino.track.repository.TrackerRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
