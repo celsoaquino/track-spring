@@ -6,7 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
@@ -17,7 +17,7 @@ public class LocationDTO {
     private Long id;
     private Long trackerId;
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
-    private Date dateTime;
+    private LocalDateTime dateTime;
     private Double latitude;
     private Double longitude;
 
