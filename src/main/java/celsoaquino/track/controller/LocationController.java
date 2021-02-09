@@ -43,11 +43,9 @@ public class LocationController {
 
     @PostMapping
     @ResponseBody
-    public Location create(@RequestBody Location location)  {
+    public Location create(@RequestBody Location location) throws LocationNotFoundException {
         location.setDateTime(LocalDateTime.now());
-        log.info("testAsync Start");
         service.updateTrack(location);
-
         return locationService.create(location);
     }
 

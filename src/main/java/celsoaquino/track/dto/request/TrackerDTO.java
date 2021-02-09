@@ -1,5 +1,6 @@
 package celsoaquino.track.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,5 +19,6 @@ public class TrackerDTO {
     private Double latitude;
     private Double longitude;
 
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private List<LocationDTO> locationList;
 }

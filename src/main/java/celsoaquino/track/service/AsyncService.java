@@ -1,8 +1,12 @@
 package celsoaquino.track.service;
 
+import celsoaquino.track.Exception.LocationNotFoundException;
+import celsoaquino.track.config.async.AsyncExceptionHandler;
 import celsoaquino.track.dto.request.TrackerDTO;
 import celsoaquino.track.entity.Location;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.exception.ConstraintViolationException;
+import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -16,20 +20,19 @@ public class AsyncService {
     private TrackerService trackerService;
 
     @Transactional
-    @Async("asyncExecutor")
-    public void updateTrack(Location location) {
-        log.info("Initial async");
-        Long id = location.getTrackerId();
-
+    @Async
+    public void updateTrack(Location location)  {
         try {
-            log.info("============= " +id);
+            Long id = location.getTrackerId();
             TrackerDTO tracker = trackerService.findById(id);
-            log.info("---------- " +tracker.getName());
             tracker.setLatitude(location.getLatitude());
             tracker.setLongitude(location.getLongitude());
             trackerService.save(tracker);
-        } catch (Exception e) {
-          log.warn("Async ---------->>> " + e.getMessage());
+        }catch (LocationNotFoundException e) {
+            log.error(e.getMessage());
+        } catch (ConstraintViolationException e) {
+            e.getMessage();
         }
+
     }
 }
