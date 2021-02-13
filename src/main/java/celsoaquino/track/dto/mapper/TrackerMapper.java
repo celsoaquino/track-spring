@@ -15,6 +15,6 @@ public interface TrackerMapper {
 
     Tracker toModel(TrackerDTO trackerDTO);
 
-    @Mapping(source = "tracker.locationList", target = "locationList")
+    //@Mapping(source = "tracker.locationList", target = "locationList")
     TrackerDTO toDTO(Tracker tracker);
 }

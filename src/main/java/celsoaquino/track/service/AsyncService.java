@@ -1,12 +1,10 @@
 package celsoaquino.track.service;
 
 import celsoaquino.track.Exception.LocationNotFoundException;
-import celsoaquino.track.config.async.AsyncExceptionHandler;
 import celsoaquino.track.dto.request.TrackerDTO;
 import celsoaquino.track.entity.Location;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.exception.ConstraintViolationException;
-import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;

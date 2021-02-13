@@ -19,6 +19,6 @@ public class TrackerDTO {
     private Double latitude;
     private Double longitude;
 
-    @JsonInclude(JsonInclude.Include.NON_EMPTY)
-    private List<LocationDTO> locationList;
+    /*@JsonInclude(JsonInclude.Include.NON_EMPTY)
+    private List<LocationDTO> locationList;*/
 }
